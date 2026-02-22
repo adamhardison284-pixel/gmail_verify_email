@@ -23,7 +23,8 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 # Runtime limit (GitHub safe)
 # ======================
 START_TIME = time.time()
-MAX_RUNTIME = 60 * 50  # 50 minutes
+MAX_RUNTIME = 60 * 60 * 5  # 60(seconds) 60(minutes) 5(hours)
+# 
 
 # ======================
 # Queue + Fetch Lock
