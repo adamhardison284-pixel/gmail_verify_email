@@ -143,7 +143,7 @@ def worker(worker_id):
         email = item["email"]
 
         try:
-            print(f"[W{worker_id}] verifying {email}")
+            #print(f"[W{worker_id}] verifying {email}")
 
             is_valid = verify_email_smtp(email)
 
@@ -155,7 +155,7 @@ def worker(worker_id):
             update_result(email_id, is_valid)
 
             # Small delay to reduce blocking risk
-            time.sleep(1)
+            #time.sleep(1)
 
         except Exception as e:
             print(f"[W{worker_id}] error:", e)
