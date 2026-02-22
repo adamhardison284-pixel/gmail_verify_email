@@ -6,12 +6,14 @@ import threading
 from queue import Queue
 from supabase import create_client
 import dns.resolver
+import sys
+sys.stdout.reconfigure(line_buffering=True)
 
 """
 pip install supabase dnspython
 python cleanbounce_1.py
 """
-
+print("Script started")
 # ======================
 # Supabase Config
 # ======================
