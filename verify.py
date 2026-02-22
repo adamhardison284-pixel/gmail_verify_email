@@ -143,7 +143,7 @@ def worker(worker_id):
         finally:
             email_queue.task_done()
         print("Sleep time")
-        time.sleep(10)
+        time.sleep(1)
 
 # ======================
 # Start Workers
