@@ -72,7 +72,7 @@ def verify_email_smtp(email):
 # ======================
 # Fetch from RPC
 # ======================
-def fetch_to_queue(batch_size=1000):
+def fetch_to_queue(batch_size=1):
     response = supabase.rpc(
         "get_emails_to_verify",
         {"p_table": "gmail", "p_limit": batch_size}
@@ -139,11 +139,13 @@ def worker(worker_id):
 
         finally:
             email_queue.task_done()
+        print("Sleep time")
+        time.sleep(10)
 
 # ======================
 # Start Workers
 # ======================
-num_workers = 4
+num_workers = 1
 
 for i in range(num_workers):
     threading.Thread(target=worker, args=(i+1,), daemon=True).start()
